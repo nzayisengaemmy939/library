@@ -1,0 +1,39 @@
+{
+    "hero": {
+        "libraryName":"University of Rwanda Library",
+      "title": "University of Rwanda Library",
+      "subtitle": "This platform helps students to get an entrance in the library.",
+      "entranceButton": "Entrance",
+      "registerButton": "Register",
+       "enterRegNumber": "Enter Reg Number to make an entrance",
+  "regNumber": "Reg number",
+  "send": "Send",
+  "sending": "Send...",
+  "qrcode": "Generated qr code",
+
+  "notRegistered": "If you haven't registered?",
+  "register": "Register",
+  "darkMode": "Dark mode",
+  "language": "English",
+  "error": {
+    "required": "Registration number is required",
+    "invalid": "Invalid registration number"
+  },
+  "registerTitle": "Register here to get started",
+
+  "firstName": "First Name",
+  "otherName": "Other Name",
+  "department": "Department",
+  "school": "School",
+  "gender": {
+    "label": "Select Gender",
+    "options": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    }
+  }
+    
+    }
+  }
+  
