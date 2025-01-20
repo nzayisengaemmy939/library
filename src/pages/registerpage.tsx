@@ -129,10 +129,10 @@ const LibraryAccountCreation = () => {
 
       if (error.response) {
         toast.error(
-          error.response.data.message || "An error occurred. Please try again."
+          error.response.data.message || "Server error"
         );
       } else {
-        toast.error("An error occurred. Please try again.");
+        toast.error("Server error");
       }
     } finally {
       setLoading(false);
@@ -141,7 +141,7 @@ const LibraryAccountCreation = () => {
 
   return (
     <div
-      className={`min-h-screen bg-gray-200 ${
+      className={`min-h-screen bg-gray-100 ${
         theme === "dark" ? "bg-gray-800" : ""
       }`}
     >
@@ -152,7 +152,7 @@ const LibraryAccountCreation = () => {
         ariaLabel="Accessibility Menu"
       />
       <div
-        className={`flex flex-col gap-1 bg-gray-100 rounded-md sm:px-8 px-4 w-[95%] m-auto sm:w-[40%] sm:mt-1 mt-20 ${
+        className={`flex flex-col gap-1 bg-white dark:bg-gray-900 rounded-md sm:px-8 px-4 w-[95%] m-auto sm:w-[40%] sm:mt-20 mt-20 ${
           theme === "dark" ? "bg-gray-900" : ""
         }`}
       >
@@ -169,9 +169,9 @@ const LibraryAccountCreation = () => {
             value={formData.regNo}
             onChange={handleInputChange}
             min="1"
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 ${
               errors.regNumber ? "border-red-500" : "border-gray-300"
-            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700`}
+            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none dark:text-gray-300 text-gray-700`}
             placeholder= {t("hero.regNumber")}
           />
 
@@ -184,7 +184,7 @@ const LibraryAccountCreation = () => {
             name="firstName"
             value={formData.firstName}
             onChange={handleInputChange}
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 ${
               errors.firstName ? "border-red-500" : "border-gray-300"
             } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700`}
             placeholder=  {t("hero.firstName")}
@@ -198,7 +198,7 @@ const LibraryAccountCreation = () => {
             name="otherName"
             value={formData.otherName}
             onChange={handleInputChange}
-            className="border border-gray-300 rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700"
+            className="border border-gray-300 rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none dark:text-gray-300 text-gray-700  dark:bg-gray-800 dark:border-gray-600"
             placeholder= {t("hero.otherName")}
             
           />
@@ -208,7 +208,7 @@ const LibraryAccountCreation = () => {
             name="department"
             value={formData.department}
             onChange={handleInputChange}
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 ${
               errors.department ? "border-red-500" : "border-gray-300"
             } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700`}
             placeholder={t("hero.department")}
@@ -222,7 +222,7 @@ const LibraryAccountCreation = () => {
             name="school"
             value={formData.school}
             onChange={handleInputChange}
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 ${
               errors.school ? "border-red-500" : "border-gray-300"
             } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700`}
             placeholder={t("hero.school")}
@@ -235,9 +235,9 @@ const LibraryAccountCreation = () => {
             name="gender"
             value={formData.gender}
             onChange={handleInputChange}
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 text-gray-600 dark:text-gray-300 ${
               errors.gender ? "border-red-500" : "border-gray-300"
-            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none text-gray-700`}
+            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none `}
           >
             <option value="">{t("hero.gender.label")}</option>
             <option value="male">{t("hero.gender.options.male")}</option>
@@ -255,9 +255,9 @@ const LibraryAccountCreation = () => {
             name="level"
             value={formData.level}
             onChange={handleInputChange}
-            className={`border ${
+            className={`border dark:bg-gray-800 dark:border-gray-600 ${
               errors.level ? "border-red-500" : "border-gray-300"
-            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none  text-gray-700`}
+            } rounded-md px-4 py-[5px] mb-1 w-full focus:outline-none  text-gray-700 dark:text-gray-300`}
             placeholder={t("hero.level")}
           />
           {errors.level && (

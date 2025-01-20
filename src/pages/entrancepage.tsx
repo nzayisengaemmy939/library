@@ -67,7 +67,7 @@ const LibraryEntrance = () => {
 
   return (
     <div
-      className={`w-full h-screen bg-gray-100 ${
+      className={`w-full h-screen  bg-gray-100 ${
         theme === "dark" ? "bg-gray-800" : ""
       }`}
     >
@@ -83,10 +83,10 @@ const LibraryEntrance = () => {
       <div className={`h-[88vh] flex items-center justify-center`}>
         {!formSubmitted ? (
           <div
-            className={`flex flex-col bg-gray-200 rounded-md sm:p-8 p-4 w-[95%] sm:w-[40%] ${
+            className={`flex flex-col  rounded-md sm:p-8 p-4 w-[95%] sm:w-[40%] ${
               theme === "dark"
                 ? "bg-gray-900"
-                : "bg-gradient-to-br from-gray-50 to-gray-100"
+                : "bg-white"
             }`}
           >
             <form onSubmit={handleSubmit}>
@@ -100,7 +100,7 @@ const LibraryEntrance = () => {
                 <input
                   type="text"
                   id="regNumber"
-                  className="border border-gray-300 rounded-md px-4 py-2 w-full focus:border-blue-300 focus:outline-none text-gray-600"
+                  className="border border-gray-300 rounded-md px-4 py-2 w-full focus:border-blue-300 dark:text-gray-300 focus:outline-none text-gray-600  dark:bg-gray-800 dark:border-gray-600"
                   placeholder={t("hero.regNumber")}
                   value={regNo}
                   onChange={(e) => setRegNumber(e.target.value)}

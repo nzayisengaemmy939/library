@@ -12,6 +12,8 @@
         "send": "Ohereza",
         "sending": "Tegereza...",
   "qrcode": "Kode ya QR yakorewe",
+  "reProfilePicture":"Ifoto yawe y'umwirondoro yamaze kuvugururwa",
+  
 
         "notRegistered": "Niba utiyandikishije?",
         "register": "Iyandikishe",
@@ -22,6 +24,8 @@
           "invalid": "Numero y'umunyeshuri ntiyemewe"
         },
         "registerTitle": "Iyandikishe hano utangire",
+         "selectLanguage": "Hitamo uririmi",
+         "close": "Funga",
 
         "firstName": "Izina ry'mbere",
         "otherName": "Andi mazina",
@@ -37,7 +41,7 @@
         },
         "level": "Urwego",
         "profilePicture": "Fata ifoto yawe",
-        "reProfilePicture": "Ongera ufate ifoto yawe",
+      
         "submit": "Iyandikishe"
         
     }

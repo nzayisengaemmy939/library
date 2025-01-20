@@ -12,17 +12,12 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className={`relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden ${
+      className={`min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden ${
         theme === "dark"
           ? "bg-gray-800"
           : "bg-gradient-to-br from-gray-50 to-gray-100"
       }`}
     >
-      <div className="absolute inset-0 z-0">
-        <div className="absolute w-full h-full"></div>
-      </div>
-
-    
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <motion.div
