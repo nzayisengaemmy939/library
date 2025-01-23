@@ -1,6 +1,8 @@
-export const openCamera = async (setImage: any) => {
+export const openCamera = async (setImage: (image: string) => void) => {
+  let stream: MediaStream | null = null;
+
   try {
-    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    stream = await navigator.mediaDevices.getUserMedia({ video: true });
     const video = document.createElement("video");
     video.srcObject = stream;
     video.play();
@@ -32,7 +34,7 @@ export const openCamera = async (setImage: any) => {
 
       captureButton.style.position = "absolute";
       captureButton.style.top = "430px";
-      captureButton.style.left = "50%";
+      captureButton.style.left = "40%";
       captureButton.style.transform = "translateX(-50%)";
       captureButton.style.padding = "10px 20px";
       captureButton.style.fontSize = "16px";
@@ -46,11 +48,45 @@ export const openCamera = async (setImage: any) => {
         const imageUrl = canvas.toDataURL("image/png");
         setImage(imageUrl);
 
-        stream.getTracks().forEach((track) => track.stop());
+        cleanup();
+      });
 
+      const closeButton = document.createElement("button");
+      closeButton.innerText = "Close Camera";
+      document.body.appendChild(closeButton);
+
+      closeButton.style.position = "absolute";
+      closeButton.style.top = "430px";
+      closeButton.style.left = "60%";
+      closeButton.style.transform = "translateX(-50%)";
+      closeButton.style.padding = "10px 20px";
+      closeButton.style.fontSize = "16px";
+      closeButton.style.backgroundColor = "#d9534f";
+      closeButton.style.color = "#fff";
+      closeButton.style.border = "none";
+      closeButton.style.cursor = "pointer";
+
+      closeButton.addEventListener("click", () => {
+        cleanup();
+      });
+
+      const cleanup = () => {
+        if (stream) {
+          stream.getTracks().forEach((track) => track.stop());
+        }
         video.remove();
         captureButton.remove();
-      });
+        closeButton.remove();
+      };
+
+      const onNavigate = () => {
+        cleanup();
+        window.removeEventListener("beforeunload", onNavigate);
+        window.removeEventListener("popstate", onNavigate);
+      };
+
+      window.addEventListener("beforeunload", onNavigate);
+      window.addEventListener("popstate", onNavigate);
     };
   } catch (err) {
     console.error("Camera access denied:", err);

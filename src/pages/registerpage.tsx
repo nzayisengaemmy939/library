@@ -8,6 +8,7 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const LibraryAccountCreation = () => {
 
@@ -16,6 +17,7 @@ const LibraryAccountCreation = () => {
   const { theme } = useTheme();
   const [image, setImage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const navigate=useNavigate()
   const [formData, setFormData] = useState({
     regNo: "",
     firstName: "",
@@ -116,6 +118,9 @@ const LibraryAccountCreation = () => {
 
       if (response.status === 201) {
         toast.success("Registration successful!");
+        setTimeout(()=>{
+             navigate('/entrance')
+        },2000)
       } else {
         if (response.data && response.data.message) {
           toast.error(response.data.message);
@@ -152,7 +157,7 @@ const LibraryAccountCreation = () => {
         ariaLabel="Accessibility Menu"
       />
       <div
-        className={`flex flex-col gap-1 bg-white dark:bg-gray-900 rounded-md sm:px-8 px-4 w-[95%] m-auto sm:w-[40%] sm:mt-20 mt-20 ${
+        className={`flex flex-col gap-1 bg-white dark:bg-gray-900 rounded-md sm:px-8 px-4 w-[95%] m-auto sm:w-[40%] sm:mt-20 mt-16 ${
           theme === "dark" ? "bg-gray-900" : ""
         }`}
       >

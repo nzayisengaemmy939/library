@@ -37,7 +37,7 @@ export default function AccessibilityMenu({
     <div
       role="complementary"
       aria-label={ariaLabel}
-      className={`shadow-lg backdrop-blur-sm h-16  flex items-center justify-between px-6 sm:px-4 ${
+      className={`shadow-lg backdrop-blur-sm h-16  flex items-center justify-between px-6 sm:px-4 -z-50 ${
         theme === "dark" ? "bg-gray-900" : ""
       }`}
       style={{
@@ -79,7 +79,7 @@ export default function AccessibilityMenu({
             <button
               key={index}
               onClick={() => setNavbarColor(color)}
-              className="p-2 rounded-lg text-xl hover:bg-blue-500 sm:flex hidden"
+              className="p-2 rounded-lg text-xl hover:bg-blue-500 sm:flex hidden md:flex"
               aria-label={`Change navbar color to ${color}`}
             >
               {icon}
@@ -92,7 +92,7 @@ export default function AccessibilityMenu({
             🌍
           </span>
           <button
-            onClick={() => setIsLanguageModalOpen(true)} // Open modal on click
+            onClick={() => setIsLanguageModalOpen(true)}
             className="text-sm font-medium bg-transparent border-none focus:ring-0 cursor-pointer hover:bg-blue-500 rounded text-gray-200"
             aria-label={t("accessibility.language")}
           >
@@ -128,7 +128,7 @@ export default function AccessibilityMenu({
       )}
 
       <div className="mt-2 sm:mt-0 sm:flex hidden">
-        <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200">Download app</div>
+        <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200"><a href="https://drive.google.com/uc?export=download&id=16zO3VBTtNcOBFqcQXio13n8yMX1bS9_j" download>Download app</a></div>
       </div>
     </div>
   );

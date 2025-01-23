@@ -131,7 +131,7 @@ const LibraryEntrance = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col bg-gray-100 rounded-md p-8 sm:w-[40%] w-[95%] items-center justify-center relative dark:bg-gray-900">
+          <div className="flex flex-col bg-gray-100 rounded-md p-4 sm:w-[40%] w-[95%] items-center justify-center relative dark:bg-gray-900 z-0 mt-10">
             <h2 className="text-blue-500 text-lg font-medium mb-4">
             {t("hero.qrcode")}
             </h2>
