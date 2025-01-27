@@ -127,7 +127,7 @@ export default function AccessibilityMenu({
         </div>
       )}
 
-      <div className="mt-2 sm:mt-0 sm:flex hidden">
+      <div className="mt-2 sm:mt-0">
         <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200"><a href="https://library-7aac0.web.app/app.apk" download>Download app</a></div>
       </div>
     </div>
