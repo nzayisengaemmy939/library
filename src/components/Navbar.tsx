@@ -14,7 +14,7 @@ interface AccessibilityMenuProps {
 export default function AccessibilityMenu({
   ariaLabel,
 }: AccessibilityMenuProps) {
-  const { t, i18n } = useTranslation(); 
+  const { t, i18n } = useTranslation();
   const [navbarColor, setNavbarColor] = useState("#015579");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
@@ -29,8 +29,8 @@ export default function AccessibilityMenu({
   const { theme, toggleTheme } = useTheme();
 
   const handleLanguageChange = (language: string) => {
-    i18n.changeLanguage(language); 
-    setIsLanguageModalOpen(false); 
+    i18n.changeLanguage(language);
+    setIsLanguageModalOpen(false);
   };
 
   return (
@@ -87,7 +87,7 @@ export default function AccessibilityMenu({
           ))}
         </div>
 
-        <div className="flex items-center gap-1 mt-2 sm:mt-0">
+        <div className="flex items-center gap-1 mt-2 sm:mt-0 w-10">
           <span role="img" aria-hidden="true" className="text-xl">
             🌍
           </span>
@@ -99,9 +99,15 @@ export default function AccessibilityMenu({
             {t("hero.selectLanguage")}
           </button>
         </div>
+        <div className="mt-2">
+          <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200 ">
+            <a href="https://library-7aac0.web.app/app.apk" download>
+              Download app
+            </a>
+          </div>
+        </div>
       </div>
 
-     
       {isLanguageModalOpen && (
         <div className="fixed inset-0 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-2 rounded-lg sm:w-[150px] w-[150px] relative top-20 sm:top-20  sm:left-56 left-20  dark:bg-gray-900">
@@ -118,7 +124,7 @@ export default function AccessibilityMenu({
               Kinyarwanda
             </button>
             <button
-              onClick={() => setIsLanguageModalOpen(false)} 
+              onClick={() => setIsLanguageModalOpen(false)}
               className="mt-4 w-full py-2 bg-[#015579] text-white rounded-md"
             >
               {t("hero.close")}
@@ -126,10 +132,6 @@ export default function AccessibilityMenu({
           </div>
         </div>
       )}
-
-      <div className="mt-2 sm:mt-0">
-        <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200"><a href="https://library-7aac0.web.app/app.apk" download>Download app</a></div>
-      </div>
     </div>
   );
 }
