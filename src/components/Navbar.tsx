@@ -100,16 +100,16 @@ export default function AccessibilityMenu({
           </button>
         </div>
         <div className="mt-2">
-          <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200 ">
-            <a
-              href="https://library-7aac0.web.app/app.apk"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Download app
-            </a>
-          </div>
-        </div>
+  <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200 sm:hidden lex">
+    
+    <a  href="https://library-7aac0.web.app/app.apk"
+      download
+      className="block w-full h-full"
+    >
+      Download app
+    </a>
+  </div>
+</div>
       </div>
 
       {isLanguageModalOpen && (
@@ -136,6 +136,15 @@ export default function AccessibilityMenu({
           </div>
         </div>
       )}
+      <div className="px-4 py-2 bg-blue-500 rounded-lg text-gray-200  sm:flex hidden">
+    
+    <a  href="https://library-7aac0.web.app/app.apk"
+      download
+      className="block w-full h-full"
+    >
+      Download app
+    </a>
+  </div>
     </div>
   );
 }
